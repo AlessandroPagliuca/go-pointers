@@ -5,12 +5,15 @@ import "fmt"
 func main() {
 	age := 32 //regular variable
 
-	fmt.Println("Age: ", age)
+	//pointer variable
+	agePointer := &age
 
-	adultYears := getAdultAge(age)
-	fmt.Println(adultYears)
+	fmt.Println("Age: ", *agePointer)
+
+	editAgeAdultAge(agePointer)
+	fmt.Println(age)
 }
 
-func getAdultAge(age int) int {
-	return age - 18
+func editAgeAdultAge(age *int) {
+	*age = *age - 18
 }
